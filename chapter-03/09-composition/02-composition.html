@@ -13,11 +13,15 @@
 
     const createClockTime = date => ({date})
 
+    console.dir(createClockTime(new Date()));
+
     const appendAMPM = ({date}) =>
         ({
             date,
             ampm: (date.getHours() >= 12) ? "PM" : "AM"
         })
+
+    console.dir(appendAMPM(createClockTime(new Date())));
 
     const civilianHours = clockTime => {
       const hours = clockTime.date.getHours()
@@ -29,11 +33,15 @@
       }
     }
 
+     console.dir(civilianHours(appendAMPM(createClockTime(new Date()))));
+
     const removeDate = clockTime => {
       let newTime = {...clockTime}
       delete newTime.date
       return newTime
     }
+
+    console.dir(removeDate(civilianHours(appendAMPM(createClockTime(new Date())))));
 
     // 앞의 모든 함수를 합성하지만 그렇게 좋은 방법은 아니다
 
