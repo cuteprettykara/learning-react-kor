@@ -12,6 +12,32 @@
   <script type="text/babel">
 
     const { createStore, combineReducers } = Redux
+    const initialState = {
+      colors: [
+          {
+              id: 0,
+              title: "과격한 빨강",
+              color: "#FF0000",
+              rating: 3,
+              timestamp: "Sat Mar 12 2016 16:12:09 GMT-0800 (PST)"
+          },
+          {
+              id: 1,
+              title: "미친 녹색",
+              color: "#00FF00",
+              rating: 0,
+              timestamp: "Fri Mar 11 2016 12:00:00 GMT-0800 (PST)"
+          },
+          {
+              id: 2,
+              title: "큰 파랑",
+              color: "#0000FF",
+              rating: 5,
+              timestamp: "Thu Mar 10 2016 01:11:12 GMT-0800 (PST)"
+          }
+      ],
+      sort: "SORTED_BY_TITLE"
+    }
 
     const color = (state = {}, action) => {
       switch (action.type) {
@@ -66,27 +92,49 @@
 
     const store = createStore(
       combineReducers({ colors, sort }),
-      (localStorage['redux-store']) ?
-          JSON.parse(localStorage['redux-store']) :
-          {}
+      initialState
     )
 
-    store.subscribe(() => {
-      localStorage['redux-store'] = JSON.stringify(store.getState())
-    })
 
-    console.log('현재 색 개수', store.getState().colors.length)
-    console.log('현재 상태', store.getState())
 
-    let uniqueId = 0
-
+    console.log(
+      "ADD_COLOR 전 colors 배열 길이 ",
+      store.getState().colors.length
+    )
     store.dispatch({
       type: "ADD_COLOR",
-      id: uniqueId++,
+      id: 3,
       title: "파티 핑크",
       color: "#F142FF",
-      timestamp: new Date().toString()
+      timestamp: "Thu Mar 10 2016 01:11:12 GMT-0800 (PST)"
     })
+    console.log(
+      "ADD_COLOR 이후 colors 배열 길이",
+      store.getState().colors.length
+    )
+
+
+
+    console.log(
+      "RATE_COLOR 전 색 평점",
+      store.getState().colors[3].rating
+    )
+    store.dispatch({
+      type: "RATE_COLOR",
+      id: 3,
+      rating: 5
+    })
+    console.log(
+      "RATE_COLOR 후 색 평점",
+      store.getState().colors[3].rating
+    )
+
+
+
+    console.log(
+      "두 액션 실행 이후 애플리케이션 상태",
+      store.getState()
+    )
 
 
   </script>
