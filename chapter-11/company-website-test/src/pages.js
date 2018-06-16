@@ -1,5 +1,12 @@
 import { Link, Route } from 'react-router-dom'
+import { MainMenu } from './menus'
 import './stylesheets/pages.scss'
+
+const PageTemplate = ({children}) => 
+    <div>
+        <MainMenu />
+        {children}
+    </div>
 
 export const Home = () => 
     <section className="home">
@@ -18,21 +25,29 @@ export const Whoops404 = ({location}) =>
     </div>
 
 export const About = () =>
-    <section className="about">
-        <h1>[회사소개]</h1>
-    </section>
+    <PageTemplate>
+        <section className="about">
+            <h1>[회사소개]</h1>
+        </section>
+    </PageTemplate>
 
 export const Events = () => 
-    <section className="events">
-        <h1>[이벤트]</h1>
-    </section>
+    <PageTemplate>
+        <section className="events">
+            <h1>[이벤트]</h1>
+        </section>
+    </PageTemplate>
 
 export const Products = () => 
-    <section className="products">
-        <h1>[제품]</h1>
-    </section>
+    <PageTemplate>
+        <section className="products">
+            <h1>[제품]</h1>
+        </section>
+    </PageTemplate>
 
 export const Contact = () => 
-    <section className="contact">
-        <h1>[고객지원]</h1>
-    </section>
+    <PageTemplate>
+        <section className="contact">
+            <h1>[고객지원]</h1>
+        </section>
+    </PageTemplate>
