@@ -26,4 +26,32 @@ export const MainMenu = () =>
         </NavLink>
     </nav>
 
+export const AboutMenu = ({ match }) =>
+    <div className="about-menu">
+        <li>
+            <NavLink to="/about"
+                  style={match.isExact && selectedStyle}>
+                [회사]
+            </NavLink>
+        </li>
+        <li>
+            <NavLink to="/about/history"
+                  activeStyle={selectedStyle}>
+                [연혁]
+            </NavLink>
+        </li>
+        <li>
+            <NavLink to="/about/services"
+                  activeStyle={selectedStyle}>
+                [서비스]
+            </NavLink>
+        </li>
+        <li>
+            <NavLink to="/about/location"
+                  activeStyle={selectedStyle}>
+                [위치]
+            </NavLink>
+        </li>
+    </div>
+
 
