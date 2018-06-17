@@ -41,10 +41,10 @@
 
     class MenuButton extends Component {
 
-        componentWillReceiveProps(nextProps) {
-            const collapsed = (nextProps.collapsed && nextProps.collapsed === true) ? true : false
-            this.setState({collapsed})
-        }
+        // componentWillReceiveProps(nextProps) {
+        //     const collapsed = (nextProps.collapsed && nextProps.collapsed === true) ? true : false
+        //     this.setState({collapsed})
+        // }
 
         render() {
             const {children, collapsed, txt, expandCollapse} = this.props
