@@ -6,8 +6,8 @@ import { sortFunction } from '../lib/array-helpers'
 
 const ColorList = ({ store }) => {
     const { colors, sort } = store.getState()
-    const sortedColors = [...colors].
-    (sortFunction(sort))
+    const sortedColors = [...colors].sort(sortFunction(sort))
+
     return (
         <div className="color-list">
             {(colors.length === 0) ?
