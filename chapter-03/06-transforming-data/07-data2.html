@@ -19,7 +19,9 @@
     ]
 
     const editNth = (n, name, arr) =>
-        arr.map((item, i) => (i === n) ? ({...item, name}) : item)
+        arr.map(
+            (item, i) => (i === n) ? ({...item, name}) : item
+        )
 
     let updatedSchools = editNth(2, "Mansfield", schools)
 

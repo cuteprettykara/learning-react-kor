@@ -24,6 +24,8 @@ const appendAMPM = clockTime =>
         ampm: (clockTime.hours >= 12) ? "PM" : "AM"
     })
 
+
+
 const display = target => time => target(time)
 
 const formatClock = format =>
@@ -33,13 +35,16 @@ const formatClock = format =>
             .replace("ss", time.seconds)
             .replace("tt", time.ampm)
 
-const prependZero = key => clockTime =>
-    ({
-        ...clockTime,
-        [key]: (clockTime[key] < 10) ?
-        "0" + clockTime[key] :
-            clockTime[key]
-    })
+const prependZero = key => 
+    clockTime =>
+        ({
+            ...clockTime,
+            [key]: (clockTime[key] < 10) ?
+            "0" + clockTime[key] :
+                clockTime[key]
+        })
+
+
 
 const compose = (...fns) =>
     (arg) =>

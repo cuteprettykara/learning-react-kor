@@ -16,7 +16,8 @@
     var gangwon = {
       resorts: ["Kirkwood","Squaw","Alpine","Heavenly","Northstar"],
       print: function(delay=1000) {
-
+        console.log(this === gangwon)
+        
         setTimeout(function() {
           console.log(this === window)
           console.log(this.resorts.join(","))

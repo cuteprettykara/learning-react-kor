@@ -16,8 +16,11 @@
     var tahoe = {
       resorts: ["용평","평창","강촌","강릉","홍천"],
       print: function(delay=1000) {
+        console.log(this === tahoe)
 
         setTimeout(function() {
+          console.log(this === window)
+          console.log(this === tahoe)
           console.log(this.resorts.join(","))
         }.bind(this), delay)
 

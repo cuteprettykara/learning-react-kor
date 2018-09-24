@@ -39,10 +39,10 @@
 
     const compose = (...fns) =>
       (arg) =>
-      fns.reduce(
-        (composed, f) => f(composed),
-        arg
-    )
+              fns.reduce(
+                (composed, f) => f(composed),
+                arg
+              )
 
     const oneFunction = compose(
       createClockTime,

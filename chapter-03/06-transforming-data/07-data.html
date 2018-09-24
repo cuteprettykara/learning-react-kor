@@ -21,9 +21,8 @@
     // Edit Name with less syntax
 
     const editName = (oldName, name, arr) =>
-        arr.map(item => (item.name === oldName) ?
-            ({...item,name}) :
-            item
+        arr.map(
+            item => (item.name === oldName) ? ({...item, name}) : item
         )
 
     let updatedSchools = editName("Stratford", "HB Woodlawn", schools)
