@@ -44,9 +44,7 @@
 
     const ShowHideMessage = ({children, collapsed, expandCollapse}) =>
       <p onClick={expandCollapse}>
-          {(collapsed) ?
-              children.replace(Letter, "x") :
-              children}
+          {(collapsed) ? children.replace(Letter, "x") : children}
       </p>
 
     const HiddenMessage = Expandable(ShowHideMessage)

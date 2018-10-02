@@ -41,10 +41,10 @@
           render() {
               return (
                   <div className="data-component">
-                      {(this.state.loading) ?
-                          <div>데이터 로딩중...</div> :
-                          <ComposedComponent {...this.state}
-                                             {...this.props} />}
+                      {(this.state.loading) 
+                            ? <div>데이터 로딩중...</div> 
+                            : <ComposedComponent {...this.state} />
+                      }
                   </div>
               )
           }

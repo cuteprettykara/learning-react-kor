@@ -66,13 +66,9 @@
           const { members, loading, error } = this.state
           return (
               <div className="member-list">
-                  {(loading) ?
-                      <span>멤버 로딩중</span> :
-                      (members.length) ?
-                          members.map((user, i) =>
-                              <Member key={i} {...user} />
-                          ) :
-                          <span>0 멤버 로딩됨...</span>
+                  {(loading) ? <span>멤버 로딩중</span> 
+                             : (members.length) ? members.map((user, i) => <Member key={i} {...user} />)
+                                                : <span>0 멤버 로딩됨...</span>
                   }
                   {(error) ? <p>멤버 로딩 오류: {error}</p> : ""}
         </div>
@@ -81,7 +77,7 @@
   }
 
   render(
-      <MemberList count={5} />,
+      <MemberList count={1000} />,
       document.getElementById('react-container')
   )
 

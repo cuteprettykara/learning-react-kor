@@ -32,10 +32,7 @@
           const { hidden } = this.state
           return (
               <p>
-                  {(hidden) ?
-                      children.replace(Letter, "x") :
-                      children
-                  }
+                  {(hidden) ? children.replace(Letter, "x") : children}
               </p>
           )
       }
@@ -49,8 +46,8 @@
           this.state = {
               messages: [
                   "The crow crows after midnight",
-                  "엄마가 섬그늘에 굴 따러 가면",
-                  "Jericho Jericho Go"
+                  "Jericho Jericho Go",
+                  "엄마가 섬그늘에 굴 따러 가면"
               ],
               showing: -1
           }
@@ -65,8 +62,8 @@
           this.interval = setInterval(() => {
               this.setState(prevState => {
                 let { showing, messages } = prevState
-                showing = (++showing >= messages.length) ?
-                  -1 : showing
+                showing = (++showing >= messages.length) ? -1 : showing
+                console.log(showing);
                 return {showing}
               })
           }, 1000)

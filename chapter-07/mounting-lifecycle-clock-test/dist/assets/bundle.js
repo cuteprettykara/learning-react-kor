@@ -20259,7 +20259,7 @@ var Clock = function (_Component) {
                 hours = _state.hours,
                 minutes = _state.minutes,
                 seconds = _state.seconds,
-                timeOfDay = _state.timeOfDay;
+                ampm = _state.ampm;
 
             return React.createElement(
                 'div',
@@ -20292,7 +20292,12 @@ var Clock = function (_Component) {
                 React.createElement(
                     'span',
                     null,
-                    timeOfDay
+                    ':'
+                ),
+                React.createElement(
+                    'span',
+                    null,
+                    ampm
                 ),
                 React.createElement(
                     'button',

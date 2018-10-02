@@ -26,9 +26,7 @@
           Children.only(children)
 
       const Display = ({ ifTruthy=true, children }) =>
-          (ifTruthy) ?
-              findChild(children, WhenTruthy) :
-              findChild(children, WhenFalsy)
+          (ifTruthy) ? findChild(children, WhenTruthy) : findChild(children, WhenFalsy)
 
       const age = 19
 

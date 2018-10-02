@@ -40,11 +40,11 @@
 
           render() {
               return (
-                  <div className="data-component">
-                      {(this.state.loading) ?
-                          <div>데이터 로딩중...</div> :
-                          <ComposedComponent {...this.state}
-                                             {...this.props} />}
+                <div className="data-component">
+                      {(this.state.loading) 
+                            ? <div>데이터 로딩중...</div> 
+                            : <ComposedComponent {...this.state} {...this.props} />
+                      }
                   </div>
               )
           }
@@ -62,7 +62,7 @@
                               "https://restcountries.eu/rest/v1/all"
                           )
     render(
-      <CountryDropDown selected="United States" />,
+      <CountryDropDown selected="South Korea" />,
       document.getElementById('react-container')
     )
 

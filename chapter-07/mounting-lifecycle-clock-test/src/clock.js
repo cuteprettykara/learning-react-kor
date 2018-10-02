@@ -24,7 +24,7 @@ export default class Clock extends Component {
         console.log("componentWillUpdate...")
     }
     render() {
-        const { hours, minutes, seconds, timeOfDay } = this.state
+        const { hours, minutes, seconds, ampm } = this.state
         return (
             <div className="clock">
                 <span>{hours}</span>
@@ -32,7 +32,8 @@ export default class Clock extends Component {
                 <span>{minutes}</span>
                 <span>:</span>
                 <span>{seconds}</span>
-                <span>{timeOfDay}</span>
+                <span>:</span>
+                <span>{ampm}</span>
                 <button onClick={this.props.onClose}>x</button>
             </div>
         )

@@ -51,11 +51,10 @@
             return (
                 <div className="pop-button">
                     <button onClick={expandCollapse}>{txt}</button>
-                    {(!collapsed) ?
-                        <div className="pop-up">
-                            {children}
-                        </div> :
-                        ""
+                    {(!collapsed) ? <div className="pop-up">
+                                        {children}
+                                    </div> 
+                                  : ""
                     }
                 </div>
             )
